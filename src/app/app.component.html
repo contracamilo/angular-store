@@ -5,6 +5,13 @@
   Esto es un div true
 </div>
 
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Nicolas'">Nicolas</p>
+  <p *ngSwitchCase="'Ramiro'">Ramiro</p>
+  <p *ngSwitchCase="'Camilo'">Camilo</p>
+  <p *ngSwitchDefault> No hay match</p>
+</div>
+
 <button (click)="addItem()">Add Item</button>
 
 <ul>
@@ -23,3 +30,5 @@
     <p>{{ product.price }}</p>
   </div>
 </div>
+
+<app-product></app-product>
