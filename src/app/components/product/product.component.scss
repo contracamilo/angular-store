@@ -1,0 +1,23 @@
+@import '../../../variables';
+
+:host {
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+}
+
+.product-component {
+  width: 100%;
+  &__img {
+    width: auto;
+    height: 100px;
+  }
+  &__btn {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+}

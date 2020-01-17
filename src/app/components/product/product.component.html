@@ -1,6 +1,8 @@
 <div class="product-component">
   <h3>{{ product.title }}</h3>
-  <img width="100" [src]="product.image" alt="">
+  <img class="product-component__img" [src]="product.image" alt="" />
   <strong>{{ product.price }}</strong>
-  <button (click)="addCart()">Agregar al carrito</button>
+  <button class="product-component__btn" (click)="addCart()">
+    Agregar al carrito
+  </button>
 </div>

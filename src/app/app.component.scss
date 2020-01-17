@@ -1,0 +1,19 @@
+.container {
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .grid-products {
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
