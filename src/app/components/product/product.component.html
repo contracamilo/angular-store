@@ -1,10 +1,6 @@
-
-<div *ngFor="let product of product">
-    <div class="product">
-    <b>Promotion</b>
-      <img width="100" [src]="product.image" [alt]="product.title"/>
-      
-      <h3>{{ product.title}}</h3>
-      <strong>{{ product.price }}</strong>
-    </div>
-  </div>
+<div class="product-component">
+  <h3>{{ product.title }}</h3>
+  <img width="100" [src]="product.image" alt="">
+  <strong>{{ product.price }}</strong>
+  <button (click)="addCart()">Agregar al carrito</button>
+</div>
