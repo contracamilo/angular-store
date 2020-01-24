@@ -1,7 +1,9 @@
 <div class="product-component">
-  <h3>{{ product.title }}</h3>
+  <h3 appHiglight>{{ product.title | uppercase }}</h3>
   <img class="product-component__img" [src]="product.image" alt="" />
-  <strong>{{ product.price }}</strong>
+  <strong>{{ product.price | currency }}</strong>
+  <p>{{ product.description | slice: 0:10 }}</p>
+  <span>{{ today | date: 'short' }}</span>
   <button class="product-component__btn" (click)="addCart()">
     Agregar al carrito
   </button>
