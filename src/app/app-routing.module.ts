@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { DemoComponent } from './components/demo/demo.component';
-import { Page404Component } from './components/page404/page404.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+
+import { LayoutComponent } from './layout/layout.component';
+
+import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
   {
@@ -15,39 +12,45 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '/home',
         pathMatch: 'full'
       },
       {
         path: 'home',
-        component: HomeComponent
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'products',
-        component: ProductsComponent
+        canActivate: [AdminGuard],
+        loadChildren: () =>
+          import('./product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'contact',
-        component: ContactComponent
+        canActivate: [AdminGuard],
+        loadChildren: () =>
+          import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
-        path: 'products/:id',
-        component: ProductDetailComponent
+        path: 'demo',
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       }
     ]
   },
   {
     path: '**',
-    component: Page404Component
-  },
-  {
-    path: 'demo',
-    component: DemoComponent
+    loadChildren: () =>
+      import('./page404/page404.module').then(m => m.Page404Module)
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
