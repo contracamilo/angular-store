@@ -4,7 +4,12 @@
   <strong>{{ product.price | currency }}</strong>
   <p>{{ product.description | slice: 0:10 }}</p>
   <span>{{ today | date: 'short' }}</span>
-  <button class="product-component__btn" (click)="addCart()">
+  <button
+    mat-raised-button
+    color="primary"
+    class="product-component__btn"
+    (click)="addCart()"
+  >
     Agregar al carrito
   </button>
   <a [routerLink]="['/products', product.id]">Ver detalle</a>

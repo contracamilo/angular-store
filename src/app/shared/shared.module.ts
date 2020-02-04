@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HiglightDirective } from './directives/higlight/higlight.directive';
 import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 import { CartComponent } from './components/cart/cart.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,6 @@ import { CartComponent } from './components/cart/cart.component';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [CommonModule, RouterModule]
+  imports: [CommonModule, RouterModule, MaterialModule]
 })
 export class SharedModule {}
