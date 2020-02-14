@@ -1,16 +1,27 @@
-<div class="product-component">
-  <h3 appHiglight>{{ product.title | uppercase }}</h3>
-  <img class="product-component__img" [src]="product.image" alt="" />
-  <strong>{{ product.price | currency }}</strong>
-  <p>{{ product.description | slice: 0:10 }}</p>
-  <span>{{ today | date: 'short' }}</span>
-  <button
-    mat-raised-button
-    color="primary"
-    class="product-component__btn"
-    (click)="addCart()"
-  >
-    Agregar al carrito
-  </button>
-  <a [routerLink]="['/products', product.id]">Ver detalle</a>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="crop-image">
+    <img class="product-component__img" [src]="product.image" alt="" />
+  </div>
+
+  <mat-card-content>
+    {{ product.description | slice: 0:10 }}
+  </mat-card-content>
+  <mat-card-actions>
+    <a [routerLink]="['/products', product.id]">Ver detalle</a>
+    <button
+      mat-raised-button
+      color="primary"
+      class="product-component__btn"
+      (click)="addCart()"
+    >
+      Agregar al carrito
+    </button>
+  </mat-card-actions>
+  <mat-card-footer>
+    {{ today | date: 'short' }}
+  </mat-card-footer>
+</mat-card>

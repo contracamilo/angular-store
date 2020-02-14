@@ -1,18 +1,27 @@
 @import '../../../../variables';
 
+/*
 :host {
   border: 1px solid #333;
   border-radius: 10px;
   display: block;
   padding: 10px;
+} */
+
+.crop-image {
+  display: block;
+  height: 220px;
+  width: 100%;
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+  }
 }
 
 .product-component {
   width: 100%;
-  &__img {
-    width: auto;
-    height: 100px;
-  }
   &__btn {
     padding: 5px 10px;
     cursor: pointer;
@@ -20,4 +29,26 @@
     border-radius: 5px;
     outline: none;
   }
+}
+
+.mat-card-header {
+  border-bottom: 1px solid #cccccc;
+}
+
+.mat-card-footer {
+  padding: 1rem 2rem;
+  background-color: #cccccc;
+}
+
+.mat-card-content {
+  padding: 1rem 1rem;
+  p {
+    padding: 0;
+  }
+}
+
+.mat-card-actions {
+  padding: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
 }
