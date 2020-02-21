@@ -1,0 +1,56 @@
+{
+    "isSuccess": true,
+    "created": true,
+    "status": "PENDING",
+    "user": {
+        "userid": "520000-157901838732460",
+        "usercode": "cc-555555",
+        "firstname": "cristine",
+        "lastname": "rolls"
+    },
+    "orders": [
+        {
+            "microblendUrl": "/service/order/orders/65655465465654"
+        }
+    ],
+    "currentOrder": {
+        "ordercode": "65655465465654",
+        "createdDate": "2019-01-13 17:28:12"
+    },
+    "lineitems": [
+        {
+            "colorcode": "YE-001",
+            "colorname": "Capiz",
+            "colorrgb": "250,193,0",
+            "fandeckid": "177",
+            "applicationcode": "3",
+            "brandcode": "7",
+            "sheencode": "2",
+            "qualitycode": "1",
+            "quantity": "1",
+            "producttypecode": "2",
+            "colorsourceid": "0",
+            "sizeid": "1",
+            "fandeckname": "Kolor Glam"
+        }
+    ],
+    "products":{
+            "sku": "135120",
+            "name": "Vinilo Capiz 1 Galones Interior Mate",
+            "price": 134900,
+            "marca": "KOLOR",
+            "pum": "7.13",
+            "unidadMedida": "Mililitro"
+        
+    },
+    "store": {
+        
+            "Address": "AV CIUDAD DE CALI NO 150-00 LOCAL-152",
+            "Id": 10,
+            "IdZone": 1,
+            "Name": "Bogotá Suba",
+        
+    },
+    "error": null
+}
+
