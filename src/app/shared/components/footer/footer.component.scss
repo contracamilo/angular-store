@@ -26,4 +26,13 @@ footer {
       }
     }
   }
+  input {
+    color: white;
+    &:placeholder {
+      color: white !important;
+    }
+  }
+  .btn-form {
+    margin: 0 0.5rem;
+  }
 }

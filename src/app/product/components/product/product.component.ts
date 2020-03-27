@@ -10,6 +10,7 @@ import {
   OnDestroy
 } from '@angular/core';
 import { Product } from 'src/interfaces/product.model';
+import { CartService } from '../../../core/services/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -22,7 +23,7 @@ export class ProductComponent
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
   today = new Date();
 
-  constructor() {
+  constructor(private cartService: CartService) {
     console.log('1. constructor');
   }
 
@@ -48,7 +49,8 @@ export class ProductComponent
 
   addCart() {
     console.log('añadir al carrito');
-    this.productClicked.emit(this.product.id);
+    this.cartService.addCart(this.product);
+    // this.productClicked.emit(this.product.id);
     // here async calls
   }
 }
