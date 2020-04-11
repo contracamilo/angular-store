@@ -1,4 +1,4 @@
-<div *ngIf="product" class="container product-detail">
+<div *ngIf="product$ | async as product" class="container product-detail">
   <mat-card>
     <div class="row">
       <div class="col-sm-12 col-md-6">
@@ -13,7 +13,9 @@
         <p>Descripción: {{ product.description }}</p>
         <button (click)="createProduct()">Crear</button>
         <button (click)="updateProduct()">Update</button>
-        <button (click)="deleteProduct()"></button>
+        <button (click)="deleteProduct()">Delete</button>
+        <button (click)="getRamdonUsers()">Ramdom</button>
+        <button (click)="getFile()">Get File</button>
       </div>
     </div>
   </mat-card>

@@ -7,7 +7,7 @@ import { AuthService } from './../../../core/services/auth/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
@@ -40,7 +40,15 @@ export class LoginComponent implements OnInit {
   private buildForm() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
     });
+  }
+
+  loginAPI() {
+    this.authService
+      .loginRestApi('cami@mail.com', '123456')
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }
